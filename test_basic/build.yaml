@@ -1,0 +1,15 @@
+targets:
+  $default:
+    sources:
+      - integration_test/**
+      - test/**
+      - lib/**
+      - $package$
+    builders:
+      bdd_widget_test|featureBuilder:
+        generate_for:
+          - integration_test/**
+          - test/**
+        options:
+          stepFolderName: ../../test_steps
+          include: package:nostra_bdd_steps/bdd_options.yaml
